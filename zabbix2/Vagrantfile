@@ -1,0 +1,129 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+$setup_agent = <<-SCRIPT
+#!/bin/bash
+set -e
+
+echo "=== Настройка Zabbix Agent ==="
+
+# Параметры (передаются из Vagrantfile)
+SERVER_IP="$1"
+AGENT_HOSTNAME="$2"
+
+# Установка Zabbix Agent
+wget -q https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_7.0-2+ubuntu22.04_all.deb
+dpkg -i zabbix-release_7.0-2+ubuntu22.04_all.deb
+apt update
+apt install -y zabbix-agent python3
+
+# Настройка агента
+cat > /etc/zabbix/zabbix_agentd.conf << EOF
+Server=${SERVER_IP}
+ServerActive=${SERVER_IP}
+Hostname=${AGENT_HOSTNAME}
+UnsafeUserParameters=1
+LogFile=/var/log/zabbix/zabbix_agentd.log
+LogFileSize=10
+Include=/etc/zabbix/zabbix_agentd.d/*.conf
+EOF
+
+# Создание Python скрипта
+cat > /usr/local/bin/my_info.py << 'PYTHON'
+#!/usr/bin/env python3
+import sys
+import os
+import re
+import datetime
+
+def main():
+    if len(sys.argv) < 2:
+        print("Использование: script.py [1|2|-ping <адрес>|-simple print <текст>]")
+        return
+
+    param = sys.argv[1]
+
+    if param == "1":
+        print("ФИО")
+        return
+    elif param == "2":
+        print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        return
+    elif param == "-ping":
+        if len(sys.argv) < 3:
+            print("Ошибка: не указан адрес для ping")
+            return
+        result = os.popen("ping -c 1 " + sys.argv[2]).read()
+        result = re.findall(r"time=(.*) ms", result)
+        if result:
+            print(result[0])
+        else:
+            print("Ping не удался")
+    elif param == "-simple":
+        if len(sys.argv) < 4 or sys.argv[2] != "print":
+            print("Ошибка: используйте -simple print <текст>")
+            return
+        print(sys.argv[3])
+    else:
+        print(f"unknown input: {param}")
+
+if __name__ == "__main__":
+    main()
+PYTHON
+
+chmod +x /usr/local/bin/my_info.py
+chown zabbix:zabbix /usr/local/bin/my_info.py
+
+# Создание UserParameter
+cat > /etc/zabbix/zabbix_agentd.d/userparameter_my_script.conf << EOF
+UserParameter=my.script[*],python3 /usr/local/bin/my_info.py \$1 \$2 \$3
+EOF
+
+# Перезапуск агента
+systemctl restart zabbix-agent
+systemctl enable zabbix-agent
+
+# Проверка
+echo "=== Проверка UserParameter ==="
+zabbix_agentd -t my.script[1]
+zabbix_agentd -t my.script[2]
+zabbix_agentd -t my.script[-ping,8.8.8.8]
+
+echo "=== Агент ${AGENT_HOSTNAME} настроен ==="
+SCRIPT
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+
+  # Общие настройки
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "1024"
+    vb.cpus = 1
+  end
+
+  # Общий network bridge (измените на ваш)
+  BRIDGE = "enp0s3"  # Укажите ваш сетевой интерфейс
+  SERVER_IP = "127.0.0.1"  # IP вашего Zabbix Server
+
+  # ----- Агент 1 -----
+  config.vm.define "agent1" do |agent1|
+    agent1.vm.hostname = "ilembetov-1"
+    agent1.vm.network "public_network", ip: "130.193.58.204", bridge: BRIDGE
+
+    agent1.vm.provision "shell" do |shell|
+      shell.inline = $setup_agent
+      shell.args = [SERVER_IP, "ilembetov-1"]
+    end
+  end
+
+  # ----- Агент 2 -----
+  config.vm.define "agent2" do |agent2|
+    agent2.vm.hostname = "ilembetov-2"
+    agent2.vm.network "public_network", ip: "130.193.58.205", bridge: BRIDGE
+
+    agent2.vm.provision "shell" do |shell|
+      shell.inline = $setup_agent
+      shell.args = [SERVER_IP, "ilembetov-2"]
+    end
+  end
+end
