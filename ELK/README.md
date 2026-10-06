@@ -67,7 +67,7 @@ docker compose up -d elasticsearch
 curl -X GET 'localhost:9200/_cluster/health?pretty'
 ```
 
-![Задание 1](img/task1.png)
+![Задание 1](img/1_Elasticsearch.png)
 
 ---
 
@@ -96,7 +96,7 @@ docker compose up -d kibana
 
 В Dev Tools выполнен запрос `GET /_cluster/health?pretty`:
 
-![Задание 2](img/task2.png)
+![Задание 2](img/2_Kibana.png)
 
 ---
 
