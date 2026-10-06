@@ -157,7 +157,7 @@ curl 'localhost:9200/_cat/indices/nginx-*?v'
 
 В Kibana создан index pattern `nginx-logstash-*`, логи открыты в Discover. Строка лога разобрана на поля `clientip`, `verb`, `request`, `response`, `bytes`, `agent`:
 
-![Задание 3](img/task3.png)
+![Задание 3](img/3_Logstash.png)
 
 ---
 
