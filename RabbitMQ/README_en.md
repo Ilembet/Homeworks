@@ -11,10 +11,10 @@ Two virtual machines in VirtualBox running Ubuntu 24.04 with RabbitMQ 3.12. The 
 
 Scripts for sending and receiving messages:
 
-- [`producer.py`](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/scripts/producer.py) — `C:\Users\Василь\Documents\GitHub_clones\Homeworks\RabbitMQ\scripts\producer.py`
-- [`consumer.py`](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/scripts/consumer.py) — `C:\Users\Василь\Documents\GitHub_clones\Homeworks\RabbitMQ\scripts\consumer.py`
+- [`scripts/producer.py`](scripts/producer.py) — script for sending messages
+- [`scripts/consumer.py`](scripts/consumer.py) — script for receiving messages
 
-Screenshots are located in `C:\Users\Василь\Documents\GitHub_clones\Homeworks\RabbitMQ\img` (format: `<number>_<name>.png`):
+Screenshots are located in the `img/` folder (format: `<number>_<name>.png`):
 
 | Task | Screenshot | File |
 |------|-----------|------|
@@ -54,7 +54,7 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 
 The web interface is available at `http://localhost:15672`:
 
-![RabbitMQ Web Interface](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/1_RabbitMQ.png)
+![RabbitMQ Web Interface](img/1_RabbitMQ.png)
 
 ---
 
@@ -81,7 +81,7 @@ python3 producer.py
 
 The script creates the `hello` queue and places the message `Hello Netology!` in it. In the web interface, you can see one message in the queue:
 
-![Producer — hello queue](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/2_producer.png)
+![Producer — hello queue](img/2_producer.png)
 
 Read the message:
 
@@ -91,7 +91,7 @@ python3 consumer.py
 
 The consumer retrieves the message from the queue and prints it. After that, the queue becomes empty:
 
-![Consumer execution result](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/2_consumer.png)
+![Consumer execution result](img/2_consumer.png)
 
 ---
 
@@ -146,21 +146,21 @@ The policy mirrors all queues (`".*"`) to all cluster nodes (`ha-mode: all`), an
 
 Cluster nodes in the web interface:
 
-![Cluster nodes](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_Overview → Nodes.png)
+![Cluster nodes](img/3_Overview → Nodes.png)
 
 Enabled ha-all policy:
 
-![ha-all policy](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_Admin → Policies.png)
+![ha-all policy](img/3_Admin → Policies.png)
 
 ### Cluster Status
 
 `rabbitmqctl cluster_status` on rmq01:
 
-![cluster_status rmq01](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_status-rmq01.png)
+![cluster_status rmq01](img/3_status-rmq01.png)
 
 `rabbitmqctl cluster_status` on rmq02:
 
-![cluster_status rmq02](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_status-rmq02.png)
+![cluster_status rmq02](img/3_status-rmq02.png)
 
 ### Replication Verification
 
@@ -172,7 +172,7 @@ rabbitmqadmin -u admin -p admin get queue='hello'
 
 The message is available on both nodes. By default, `get` returns the message back to the queue, so it is also visible on the second node.
 
-![rabbitmqadmin get queue='hello'](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_message.png)
+![rabbitmqadmin get queue='hello'](img/3_message.png)
 
 ### Node Failure
 
@@ -184,6 +184,6 @@ sudo systemctl stop rabbitmq-server
 
 Changed the address in `consumer.py` to rmq02 (`10.0.2.4`) and ran the script:
 
-![consumer.py on rmq02 after failover](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_consumer.png)
+![consumer.py on rmq02 after failover](img/3_consumer.png)
 
 Message received. The node where the queue was created is unavailable, but the copy on rmq02 became the primary, and no data was lost.

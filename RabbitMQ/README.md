@@ -11,10 +11,10 @@
 
 Скрипты для отправки и получения сообщений:
 
-- [`producer.py`](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/scripts/producer.py) — `C:\Users\Василь\Documents\GitHub_clones\Homeworks\RabbitMQ\scripts\producer.py`
-- [`consumer.py`](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/scripts/consumer.py) — `C:\Users\Василь\Documents\GitHub_clones\Homeworks\RabbitMQ\scripts\consumer.py`
+- [`scripts/producer.py`](scripts/producer.py) — скрипт для отправки сообщений
+- [`scripts/consumer.py`](scripts/consumer.py) — скрипт для получения сообщений
 
-Скриншоты находятся в каталоге `C:\Users\Василь\Documents\GitHub_clones\Homeworks\RabbitMQ\img` (формат: `_<номер>_название_файла`):
+Скриншоты находятся в каталоге `img/` (формат: `_<номер>_название_файла`):
 
 | Задание | Скриншот | Файл |
 |---------|----------|------|
@@ -54,7 +54,7 @@ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 
 Веб-интерфейс открывается по адресу `http://localhost:15672`:
 
-![Веб-интерфейс RabbitMQ](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/1_RabbitMQ.png)
+![Веб-интерфейс RabbitMQ](img/1_RabbitMQ.png)
 
 ---
 
@@ -81,7 +81,7 @@ python3 producer.py
 
 Скрипт создаёт очередь `hello` и кладёт в неё сообщение `Hello Netology!`. В веб-интерфейсе видно, что в очереди одно сообщение:
 
-![Producer — очередь hello](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/2_producer.png)
+![Producer — очередь hello](img/2_producer.png)
 
 Читаем сообщение:
 
@@ -91,7 +91,7 @@ python3 consumer.py
 
 Consumer забирает сообщение из очереди и выводит его, после этого очередь становится пустой:
 
-![Результат consumer.py](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/2_consumer.png)
+![Результат consumer.py](img/2_consumer.png)
 
 ---
 
@@ -146,21 +146,21 @@ sudo rabbitmqctl set_policy ha-all ".*" '{"ha-mode":"all","ha-sync-mode":"automa
 
 Ноды кластера в веб-интерфейсе:
 
-![Ноды кластера](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_Overview → Nodes.png)
+![Ноды кластера](img/3_Overview → Nodes.png)
 
 Включённая политика ha-all:
 
-![Политика ha-all](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_Admin → Policies.png)
+![Политика ha-all](img/3_Admin → Policies.png)
 
 ### Статус кластера
 
 `rabbitmqctl cluster_status` на rmq01:
 
-![cluster_status rmq01](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_status-rmq01.png)
+![cluster_status rmq01](img/3_status-rmq01.png)
 
 `rabbitmqctl cluster_status` на rmq02:
 
-![cluster_status rmq02](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_status-rmq02.png)
+![cluster_status rmq02](img/3_status-rmq02.png)
 
 ### Проверка зеркалирования
 
@@ -172,7 +172,7 @@ rabbitmqadmin -u admin -p admin get queue='hello'
 
 Сообщение есть на обеих нодах. `get` по умолчанию возвращает его обратно в очередь, поэтому на второй ноде оно тоже видно.
 
-![rabbitmqadmin get queue='hello'](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_message.png)
+![rabbitmqadmin get queue='hello'](img/3_message.png)
 
 ### Отказ ноды
 
@@ -184,6 +184,6 @@ sudo systemctl stop rabbitmq-server
 
 В `consumer.py` поменял адрес на rmq02 (`10.0.2.4`) и запустил скрипт:
 
-![consumer.py на rmq02 после failover](C:/Users/Василь/Documents/GitHub_clones/Homeworks/RabbitMQ/img/3_consumer.png)
+![consumer.py на rmq02 после failover](img/3_consumer.png)
 
 Сообщение получено. Нода, где создавалась очередь, недоступна, но копия на rmq02 стала главной, и данные не потерялись.
