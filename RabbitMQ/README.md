@@ -146,11 +146,11 @@ sudo rabbitmqctl set_policy ha-all ".*" '{"ha-mode":"all","ha-sync-mode":"automa
 
 Ноды кластера в веб-интерфейсе:
 
-![Ноды кластера](img/3_Overview → Nodes.png)
+![Ноды кластера](img/3_Overview_Nodes.png)
 
 Включённая политика ha-all:
 
-![Политика ha-all](img/3_Admin → Policies.png)
+![Политика ha-all](img/3_Admin_Policies.png)
 
 
 ### Проверка зеркалирования

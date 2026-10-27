@@ -146,11 +146,11 @@ The policy mirrors all queues (`".*"`) to all cluster nodes (`ha-mode: all`), an
 
 Cluster nodes in the web interface:
 
-![Cluster nodes](img/3_Overview → Nodes.png)
+![Cluster nodes](img/3_Overview_Nodes.png)
 
 Enabled ha-all policy:
 
-![ha-all policy](img/3_Admin → Policies.png)
+![ha-all policy](img/3_Admin_Policies.png)
 
 
 ### Replication Verification
