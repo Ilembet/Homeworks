@@ -16,15 +16,22 @@
 | 4 | [HAProxy + Nginx](./HAProxy%20+%20Nginx) | `HAProxy + Nginx/` | Настройка балансировки нагрузки с HAProxy и обратного прокси Nginx |
 | 5 | [Disaster Recovery. FHRP и Keepalived](./Disaster%20Recovery.%20FHRP%20и%20Keepalived) | `Disaster Recovery. FHRP и Keepalived/` | Настройка отказоустойчивости сети с помощью FHRP (HSRP/VRRP) и Keepalived |
 | 6 | [Prometheus 2](./Prometheus%202) | `Prometheus 2/` | Настройка правил оповещения Prometheus, установка Alertmanager, экспорт метрик Docker |
+| 7 | [Redis & Memcached](./Redis-memcached) | `Redis-memcached/` | Кеширование: установка и настройка Redis и Memcached, работа с TTL и типами данных |
+| 8 | [RabbitMQ](./RabbitMQ) | `RabbitMQ/` | Очереди сообщений: установка, кластеризация нод, политика ha-all, зеркалирование очередей |
+| 9 | [ELK](./ELK) | `ELK/` | Сбор и анализ логов: Elasticsearch, Kibana, Logstash, Filebeat, развёртывание в Docker Compose |
+| 10 | [Cloud server fault tolerance](./Cloud%20server%20fault%20tolerance) | `Cloud server fault tolerance/` | Отказоустойчивая инфраструктура в Yandex Cloud: Terraform, Network Load Balancer, Target Group |
 
 ---
 
 ## 🛠 Используемые технологии
 
-- **Мониторинг:** Zabbix, Prometheus, Grafana
-- **Node Exporter:** сбор метрик с хостов
+- **Мониторинг:** Zabbix, Prometheus, Grafana, Node Exporter
 - **Алертинг:** настройка уведомлений и триггеров
-- **Визуализация:** дашборды Grafana
+- **Визуализация:** дашборды Grafana, Kibana
+- **Логирование:** Elasticsearch, Logstash, Filebeat (ELK-стек)
+- **Очереди:** RabbitMQ (кластеризация, зеркалирование)
+- **Кеширование:** Redis, Memcached (TTL, типы данных)
+- **IaC & Cloud:** Terraform, Yandex Cloud (VPC, NLB, Target Group)
 
 ---
 

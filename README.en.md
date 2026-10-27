@@ -16,15 +16,22 @@ Practical skills acquired during the course. Each section is a separate assignme
 | 4 | [HAProxy + Nginx](./HAProxy%20+%20Nginx) | `HAProxy + Nginx/` | Load balancing setup with HAProxy and Nginx reverse proxy |
 | 5 | [Disaster Recovery. FHRP and Keepalived](./Disaster%20Recovery.%20FHRP%20и%20Keepalived) | `Disaster Recovery. FHRP и Keepalived/` | Network fault tolerance configuration using FHRP (HSRP/VRRP) and Keepalived |
 | 6 | [Prometheus 2](./Prometheus%202) | `Prometheus 2/` | Prometheus alerting rules setup, Alertmanager installation, Docker metrics export |
+| 7 | [Redis & Memcached](./Redis-memcached) | `Redis-memcached/` | Caching: Redis and Memcached setup, TTL and data types |
+| 8 | [RabbitMQ](./RabbitMQ) | `RabbitMQ/` | Message queues: installation, node clustering, ha-all policy, queue mirroring |
+| 9 | [ELK](./ELK) | `ELK/` | Log aggregation: Elasticsearch, Kibana, Logstash, Filebeat, Docker Compose deployment |
+| 10 | [Cloud server fault tolerance](./Cloud%20server%20fault%20tolerance) | `Cloud server fault tolerance/` | Fault-tolerant infrastructure in Yandex Cloud: Terraform, Network Load Balancer, Target Group |
 
 ---
 
 ## 🛠 Technologies Used
 
-- **Monitoring:** Zabbix, Prometheus, Grafana
-- **Node Exporter:** host metrics collection
+- **Monitoring:** Zabbix, Prometheus, Grafana, Node Exporter
 - **Alerting:** notifications and triggers setup
-- **Visualization:** Grafana dashboards
+- **Visualization:** Grafana dashboards, Kibana
+- **Logging:** Elasticsearch, Logstash, Filebeat (ELK stack)
+- **Message Queues:** RabbitMQ (clustering, mirroring)
+- **Caching:** Redis, Memcached (TTL, data types)
+- **IaC & Cloud:** Terraform, Yandex Cloud (VPC, NLB, Target Group)
 
 ---
 
