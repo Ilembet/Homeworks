@@ -152,15 +152,6 @@ Enabled ha-all policy:
 
 ![ha-all policy](img/3_Admin → Policies.png)
 
-### Cluster Status
-
-`rabbitmqctl cluster_status` on rmq01:
-
-![cluster_status rmq01](img/3_status-rmq01.png)
-
-`rabbitmqctl cluster_status` on rmq02:
-
-![cluster_status rmq02](img/3_status-rmq02.png)
 
 ### Replication Verification
 

@@ -152,15 +152,6 @@ sudo rabbitmqctl set_policy ha-all ".*" '{"ha-mode":"all","ha-sync-mode":"automa
 
 ![Политика ha-all](img/3_Admin → Policies.png)
 
-### Статус кластера
-
-`rabbitmqctl cluster_status` на rmq01:
-
-![cluster_status rmq01](img/3_status-rmq01.png)
-
-`rabbitmqctl cluster_status` на rmq02:
-
-![cluster_status rmq02](img/3_status-rmq02.png)
 
 ### Проверка зеркалирования
 
