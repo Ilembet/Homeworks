@@ -1,4 +1,4 @@
-# Homework: SQL. Part 1 — First Name Last Name
+# Homework: SQL. Part 1 — Ilembetov Vasil Razhapovich
 
 [Русская версия](README.md)
 
