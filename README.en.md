@@ -20,6 +20,8 @@ Practical skills acquired during the course. Each section is a separate assignme
 | 8 | [RabbitMQ](./RabbitMQ) | `RabbitMQ/` | Message queues: installation, node clustering, ha-all policy, queue mirroring |
 | 9 | [ELK](./ELK) | `ELK/` | Log aggregation: Elasticsearch, Kibana, Logstash, Filebeat, Docker Compose deployment |
 | 10 | [Cloud server fault tolerance](./Cloud%20server%20fault%20tolerance) | `Cloud server fault tolerance/` | Fault-tolerant infrastructure in Yandex Cloud: Terraform, Network Load Balancer, Target Group |
+| 11 | [DDL & DML](./DDL_DML) | `DDL_DML/` | Data operations: DDL and DML queries, working with schemas and data |
+| 12 | [Backup](./Backup) | `Backup/` | Backup strategies and tools |
 
 ---
 

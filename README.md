@@ -20,6 +20,8 @@
 | 8 | [RabbitMQ](./RabbitMQ) | `RabbitMQ/` | Очереди сообщений: установка, кластеризация нод, политика ha-all, зеркалирование очередей |
 | 9 | [ELK](./ELK) | `ELK/` | Сбор и анализ логов: Elasticsearch, Kibana, Logstash, Filebeat, развёртывание в Docker Compose |
 | 10 | [Cloud server fault tolerance](./Cloud%20server%20fault%20tolerance) | `Cloud server fault tolerance/` | Отказоустойчивая инфраструктура в Yandex Cloud: Terraform, Network Load Balancer, Target Group |
+| 11 | [DDL & DML](./DDL_DML) | `DDL_DML/` | Операции с данными: DDL и DML запросы, работа со схемами и данными |
+| 12 | [Backup](./Backup) | `Backup/` | Резервное копирование: стратегии и инструменты бэкапа |
 
 ---
 
