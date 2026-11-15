@@ -46,6 +46,7 @@ Hands-on practice of the skills learned during the course. Each folder is a sepa
 | 15 | [SQL. Part 2](./SQL.%20Part%202) | JOIN, subqueries, grouping and HAVING, CASE, NOT EXISTS |
 | 16 | [Indexes](./Indexes) | Index size, EXPLAIN ANALYZE and query optimization (3.34 s → 3 ms), PostgreSQL index types |
 | 17 | [Replication and Scaling. Part 1](./Replication%20and%20Scaling.%20Part%201) | MySQL master-slave and master-master replication on two VMs |
+| 18 | [Replication and Scaling. Part 2](./Replication%20and%20Scaling.%20Part%202) | Benefits of master-slave setups, vertical and horizontal sharding plan, PostgreSQL sharding in Docker (postgres_fdw) |
 
 ---
 
@@ -57,7 +58,7 @@ Hands-on practice of the skills learned during the course. Each folder is a sepa
 - **IaC and cloud:** Terraform, Yandex Cloud (VPC, Network Load Balancer, Target Group), cloud-init
 - **Logging:** Elasticsearch, Logstash, Kibana, Filebeat (ELK)
 - **Caching and queues:** Redis, Memcached, RabbitMQ
-- **Databases:** MySQL 8, PostgreSQL, SQL, indexes and query optimization, replication
+- **Databases:** MySQL 8, PostgreSQL, SQL, indexes and query optimization, replication, sharding
 - **Tools:** Linux (Ubuntu), Bash, Python, Docker, Docker Compose, Vagrant, VirtualBox, Git
 
 ---

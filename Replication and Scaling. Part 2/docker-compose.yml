@@ -1,0 +1,51 @@
+# Шардинг PostgreSQL: роутер + 2 горизонтальных шарда users + 2 вертикальных шарда (books, stores)
+x-postgres: &postgres
+  image: postgres:16
+  restart: unless-stopped
+  environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_DB: shop
+  healthcheck:
+    test: ["CMD-SHELL", "pg_isready -U postgres -d shop"]
+    interval: 5s
+    timeout: 3s
+    retries: 10
+
+services:
+  pg-users-1:
+    <<: *postgres
+    container_name: pg-users-1
+    volumes:
+      - ./sql/shard_users.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+  pg-users-2:
+    <<: *postgres
+    container_name: pg-users-2
+    volumes:
+      - ./sql/shard_users.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+  pg-books:
+    <<: *postgres
+    container_name: pg-books
+    volumes:
+      - ./sql/books.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+  pg-stores:
+    <<: *postgres
+    container_name: pg-stores
+    volumes:
+      - ./sql/stores.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+  pg-router:
+    <<: *postgres
+    container_name: pg-router
+    ports:
+      - "15432:5432"
+    volumes:
+      - ./sql/router.sql:/docker-entrypoint-initdb.d/01-router.sql:ro
+    depends_on:
+      pg-users-1: { condition: service_healthy }
+      pg-users-2: { condition: service_healthy }
+      pg-books:   { condition: service_healthy }
+      pg-stores:  { condition: service_healthy }
