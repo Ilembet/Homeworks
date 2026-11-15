@@ -1,4 +1,4 @@
-# Homework: Replication and Scaling. Part 1 — Ilembetov Vasil
+# Homework: Replication and Scaling. Part 1 — Ilembetov Vasil Razhapovich
 
 [Русская версия](README.md)
 

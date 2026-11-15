@@ -1,5 +1,7 @@
 # Homework 1: Disaster Recovery and Keepalived
 
+[Русская версия](README.md)
+
 **Student:** Ilembetov Vasil Razhapovich
 
 ---

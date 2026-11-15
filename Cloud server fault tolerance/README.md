@@ -1,5 +1,7 @@
 # Cloud Server Fault Tolerance   Илембетов Василь Ражапович
 
+[English version](README_EN.md)
+
 ## Цель работы
 
 Создать отказоустойчивую веб-инфраструктуру в Yandex Cloud с использованием Terraform: развёртывание двух идентичных виртуальных машин с установленным Nginx, подключение их к Target Group, настройка Network Load Balancer (NLB) с HTTP health check и проверка работоспособности распределённого сервиса.

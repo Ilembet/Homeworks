@@ -1,4 +1,4 @@
-# Homework: Indexes — Ilembetov Vasil
+# Homework: Indexes — Ilembetov Vasil Razhapovich
 
 [Русская версия](README.md)
 

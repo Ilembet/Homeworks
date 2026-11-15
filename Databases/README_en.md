@@ -1,4 +1,6 @@
 # Homework: Database Model from Customer Report
+
+[Русская версия](README.md)
 Student: Ilembetov Vasil Razhapovich
 ---
 

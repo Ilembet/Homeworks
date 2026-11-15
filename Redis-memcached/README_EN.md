@@ -1,6 +1,8 @@
 # Redis & Memcached
 
-Student: Ilembetov Vasil Rajapovich
+[Русская версия](README.md)
+
+Student: Ilembetov Vasil Razhapovich
 
 ## Task 1. Caching
 

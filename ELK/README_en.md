@@ -1,5 +1,7 @@
 # Homework for "ELK" Course — `Ilembetov Vasil Razhapovich`
 
+[Русская версия](README.md)
+
 The entire stack is deployed using Docker Compose on a single server (Ubuntu):
 
 | Component | Version | Port |

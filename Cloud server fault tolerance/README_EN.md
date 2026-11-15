@@ -1,5 +1,7 @@
 # Cloud Server Fault Tolerance
 
+[Русская версия](README.md)
+
 Student: Ilembetov Vasil Razhapovich
 
 ## Objective

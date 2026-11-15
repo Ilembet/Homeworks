@@ -1,0 +1,11 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /var/log/nginx/access.log
+    fields:
+      service: nginx
+    tags: ["nginx", "via-filebeat"]
+
+output.logstash:
+  hosts: ["logstash:5044"]

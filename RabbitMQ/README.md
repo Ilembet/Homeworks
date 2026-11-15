@@ -1,4 +1,6 @@
-# Домашнее задание к занятию «Очереди RabbitMQ» — Илембетов Василь
+# Домашнее задание к занятию «Очереди RabbitMQ» — Илембетов Василь Ражапович
+
+[English version](README_en.md)
 
 ## Стенд
 
@@ -22,7 +24,7 @@
 | 2 | Producer — очередь hello | `2_producer.png` |
 | 2 | Consumer — результат выполнения | `2_consumer.png` |
 | 3 | Ноды кластера (Overview → Nodes) | `3_Overview → Nodes.png` |
-| 3 | Политика ha-all (Admin → Policies) | `3_Admin → Policies.png` |
+| 3 | Политика ha-all (Admin → Policies) | `3_Admin_Policies.png` |
 | 3 | `rabbitmqadmin get queue='hello'` | `3_message.png` |
 | 3 | Consumer после отключения ноды | `3_consumer.png` |
 

@@ -1,4 +1,6 @@
-# Homework Assignment: RabbitMQ Queues — Ilembetov Vasil
+# Homework Assignment: RabbitMQ Queues — Ilembetov Vasil Razhapovich
+
+[Русская версия](README.md)
 
 ## Environment
 
@@ -22,7 +24,7 @@ Screenshots are located in the `img/` folder (format: `<number>_<name>.png`):
 | 2 | Producer — hello queue | `2_producer.png` |
 | 2 | Consumer — execution result | `2_consumer.png` |
 | 3 | Cluster nodes (Overview → Nodes) | `3_Overview → Nodes.png` |
-| 3 | ha-all policy (Admin → Policies) | `3_Admin → Policies.png` |
+| 3 | ha-all policy (Admin → Policies) | `3_Admin_Policies.png` |
 | 3 | `rabbitmqadmin get queue='hello'` | `3_message.png` |
 | 3 | Consumer after node failure | `3_consumer.png` |
 

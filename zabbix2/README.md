@@ -1,59 +1,46 @@
-# Домашнее задание к занятию "`Система мониторинга Zabbix. Часть 2`" - `Илембетов Василь`
+# Домашнее задание к занятию «Система мониторинга Zabbix. Часть 2» — Илембетов Василь Ражапович
+
+[English version](README_EN.md)
+
+## Цели задания
+
+- научиться создавать свои шаблоны в Zabbix, добавлять хосты и связывать шаблон с хостами;
+- научиться составлять кастомный дашборд;
+- научиться создавать UserParameter на Bash;
+- научиться создавать Python-скрипт, добавлять для него UserParameter и прикреплять к шаблону;
+- научиться создавать Vagrant-скрипты для Zabbix Agent.
 
 ---
 
-### Задание 1
+## Задание 1
 
-```
-
-
-```
-Скриншот-1 к заданию 1:
-![Скриншот-1](https://github.com/Ilembet/Zabbix/blob/85017bbada8bf832398ad9862128343f367d6a34/zabbix2/img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%201.png)
-
+![Задание 1](img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%201.png)
 
 ---
 
+## Задания 2–3
 
-### Задание 2-3
-
-```
-
-
-```
-
-Скриншот-2 к заданию 2-3:
-![Скриншот-1](https://github.com/Ilembet/Zabbix/blob/00d94fb7408b48e61c7d51552a6618fc1252ee24/zabbix2/img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%202-3.png)
+![Задания 2–3](img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%202-3.png)
 
 ---
 
-### Задание 4
+## Задание 4
 
-```
-```
-
-Скриншот-3 к заданию 4:
-![Скриншот-1](https://github.com/Ilembet/Zabbix/blob/00d94fb7408b48e61c7d51552a6618fc1252ee24/zabbix2/img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%204.png)
-
+![Задание 4](img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%204.png)
 
 ---
 
-### Задание 5
+## Задание 5
 
-```
-```
-Скриншот-4 к заданию 5:
-![Скриншот-1](https://github.com/Ilembet/Zabbix/blob/00d94fb7408b48e61c7d51552a6618fc1252ee24/zabbix2/img/%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%205.png)
-
+![Задание 5](img/%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%205.png)
 
 ---
 
-### Задание 6
+## Задание 6. UserParameter на Bash
 
-```
-Код скрипта:
+Скрипт возвращает ФИО при параметре `1` и текущую дату при параметре `2`:
 
-
+```bash
 #!/bin/bash
 case $1 in
     1)
@@ -66,108 +53,28 @@ case $1 in
         echo "Неверный параметр. Используйте 1 или 2."
         ;;
 esac
-
-
 ```
 
-Скриншот-5 к заданию 6:
-![Скриншот-1](https://github.com/Ilembet/Zabbix/blob/00d94fb7408b48e61c7d51552a6618fc1252ee24/zabbix2/img/%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%206.png)
-
+![Задание 6](img/%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%206.png)
 
 ---
 
-### Задание 7
+## Задание 7. Python-скрипт и UserParameter
 
-```
-Скрипт my_script.py
+Скрипт из лекции дополнен параметрами `1` (ФИО) и `2` (текущая дата): [my_script.py](my_script.py).
 
-#!/usr/bin/env python3
-import sys
-import os
-import re
-import datetime
-
-def main():
-    # Проверяем, что передан хотя бы один аргумент
-    if len(sys.argv) < 2:
-        print("Использование: script.py [1|2|-ping <адрес>|-simple print <текст>]")
-        return
-
-    param = sys.argv[1]
-
-    # === НОВАЯ ФУНКЦИОНАЛЬНОСТЬ (из задания) ===
-    if param == "1":
-        # Возвращаем ФИО
-        print("Ваши ФИО")
-        return
-
-    elif param == "2":
-        # Возвращаем текущую дату
-        print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-        return
-
-    # === СТАРАЯ ФУНКЦИОНАЛЬНОСТЬ (из лекции) ===
-    elif param == "-ping":
-        # Проверяем, что передан адрес для ping
-        if len(sys.argv) < 3:
-            print("Ошибка: не указан адрес для ping")
-            return
-
-        # Выполняем ping
-        result = os.popen("ping -c 1 " + sys.argv[2]).read()
-        # Ищем время ответа
-        result = re.findall(r"time=(.*) ms", result)
-
-        if result:
-            print(result[0])  # Выводим время ответа
-        else:
-            print("Ping не удался или время не найдено")
-
-    elif param == "-simple":
-        # Проверяем, что передан текст для вывода
-        if len(sys.argv) < 4 or sys.argv[2] != "print":
-            print("Ошибка: используйте -simple print <текст>")
-            return
-
-        # Выводим переданный текст
-        print(sys.argv[3])
-
-    else:
-        # Неизвестная команда
-        print(f"unknown input: {param}")
-
-if __name__ == "__main__":
-    main()
-
-```
-
-Скриншот-6 к заданию 7:
-![Скриншот-1](https://github.com/Ilembet/Zabbix/blob/00d94fb7408b48e61c7d51552a6618fc1252ee24/zabbix2/img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%207.png)
-
+![Задание 7](img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%207.png)
 
 ---
 
-### Задание 8
+## Задание 8
 
-```
+![Задание 8](img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208.png)
 
-
-```
-
-Скриншот-7 к заданию 8:
-![Скриншот-1](https://github.com/Ilembet/Zabbix/blob/b4e30d998cf630cb93da737520d54471104352ac/zabbix2/img/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208.png)
-
-Скриншот-8 к заданию 8:
-![Скриншот-1](https://github.com/Ilembet/Zabbix/blob/00d94fb7408b48e61c7d51552a6618fc1252ee24/zabbix2/img/%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208-1.png)
-
+![Задание 8](img/%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208-1.png)
 
 ---
 
-### Задание 9
+## Задание 9. Vagrant
 
-```
-Приложил в файлы Vagrantfile
-
-```
-
-![Файл-1](https://github.com/Ilembet/Zabbix/blob/6da8a594d621e92573280cca1bcfcbd1d7b5b25d/zabbix2/Vagrantfile)
+[Vagrantfile](Vagrantfile) поднимает две ВМ с Zabbix Agent: устанавливает агента, настраивает `zabbix_agentd.conf`, копирует Python-скрипт и добавляет UserParameter `my.script[*]`.

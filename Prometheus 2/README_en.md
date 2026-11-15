@@ -1,5 +1,7 @@
 # Homework Assignment for "Prometheus. Part 2"
 
+[Русская версия](README.md)
+
 **Student:** Ilembetov Vasil Razhapovich
 
 ---

@@ -1,39 +1,64 @@
-# 🎓 DevOps Homeworks — Илембетов Василь
+# 🎓 DevOps Homeworks — Илембетов Василь Ражапович
 
-> Домашние задания по курсу **Netology** — *DevOps-инженер с нуля: расширенный курс*
+[English version](README.en.md)
 
-Практическая отработка навыков, полученных в ходе обучения. Каждый раздел — отдельное задание с описанием задачи и решением.
+> Домашние задания по курсу **Нетология** — *DevOps-инженер с нуля: расширенный курс*
+
+Практическая отработка навыков, полученных в ходе обучения. Каждая папка — отдельное задание с решением, конфигурациями и скриншотами. У каждого задания есть README на русском и английском.
 
 ---
 
-## 📂 Структура заданий
+## 📂 Задания
 
-| # | Задание | Папка | Описание |
-|---|---------|-------|----------|
-| 1 | [Zabbix 1](./zabbix1) | `zabbix1/` | Настройка мониторинга Zabbix, добавление хостов, триггеров |
-| 2 | [Zabbix 2](./zabbix2) | `zabbix2/` | Продвинутая настройка Zabbix, алертинг, графы |
-| 3 | [Prometheus + Node Exporter + Grafana](./Prometheus%20Node%20Exporter%20Grafana) | `Prometheus Node Exporter Grafana/` | Развёртывание стека мониторинга на базе Prometheus и Grafana |
-| 4 | [HAProxy + Nginx](./HAProxy%20+%20Nginx) | `HAProxy + Nginx/` | Настройка балансировки нагрузки с HAProxy и обратного прокси Nginx |
-| 5 | [Disaster Recovery. FHRP и Keepalived](./Disaster%20Recovery.%20FHRP%20и%20Keepalived) | `Disaster Recovery. FHRP и Keepalived/` | Настройка отказоустойчивости сети с помощью FHRP (HSRP/VRRP) и Keepalived |
-| 6 | [Prometheus 2](./Prometheus%202) | `Prometheus 2/` | Настройка правил оповещения Prometheus, установка Alertmanager, экспорт метрик Docker |
-| 7 | [Redis & Memcached](./Redis-memcached) | `Redis-memcached/` | Кеширование: установка и настройка Redis и Memcached, работа с TTL и типами данных |
-| 8 | [RabbitMQ](./RabbitMQ) | `RabbitMQ/` | Очереди сообщений: установка, кластеризация нод, политика ha-all, зеркалирование очередей |
-| 9 | [ELK](./ELK) | `ELK/` | Сбор и анализ логов: Elasticsearch, Kibana, Logstash, Filebeat, развёртывание в Docker Compose |
-| 10 | [Cloud server fault tolerance](./Cloud%20server%20fault%20tolerance) | `Cloud server fault tolerance/` | Отказоустойчивая инфраструктура в Yandex Cloud: Terraform, Network Load Balancer, Target Group |
-| 11 | [DDL & DML](./DDL_DML) | `DDL_DML/` | Операции с данными: DDL и DML запросы, работа со схемами и данными |
-| 12 | [Backup](./Backup) | `Backup/` | Резервное копирование: стратегии и инструменты бэкапа |
+### Мониторинг
+
+| # | Задание | Описание |
+|---|---|---|
+| 1 | [Zabbix. Часть 1](./zabbix1) | Установка Zabbix Server (PostgreSQL, Apache), подключение агентов на Linux и Windows |
+| 2 | [Zabbix. Часть 2](./zabbix2) | Свои шаблоны и дашборд, UserParameter на Bash и Python, Vagrant-скрипт для агентов |
+| 3 | [Prometheus + Node Exporter + Grafana](./Prometheus%20Node%20Exporter%20Grafana) | Развёртывание стека мониторинга Prometheus, Node Exporter и Grafana |
+| 4 | [Prometheus. Часть 2](./Prometheus%202) | Правила оповещения, Alertmanager, экспорт метрик Docker |
+
+### Отказоустойчивость
+
+| # | Задание | Описание |
+|---|---|---|
+| 5 | [Disaster Recovery. FHRP и Keepalived](./Disaster%20Recovery.%20FHRP%20%D0%B8%20Keepalived) | HSRP в Cisco Packet Tracer, плавающий IP на Keepalived с Bash-проверкой |
+| 6 | [HAProxy + Nginx](./HAProxy%20%2B%20Nginx) | Балансировка Round-Robin на L4 и Weighted Round-Robin на L7, связка HAProxy и Nginx |
+| 7 | [Резервное копирование](./Backup) | Бэкап через rsync, расписание cron, инкрементные копии и восстановление |
+| 8 | [Отказоустойчивость в облаке](./Cloud%20server%20fault%20tolerance) | Yandex Cloud через Terraform: две ВМ, Target Group, Network Load Balancer |
+
+### Кеширование, логи и очереди
+
+| # | Задание | Описание |
+|---|---|---|
+| 9 | [Redis & Memcached](./Redis-memcached) | Кеширование, TTL в Memcached, запись данных и работа с числами в Redis |
+| 10 | [ELK](./ELK) | Elasticsearch, Kibana, Logstash и Filebeat в Docker Compose, сбор логов Nginx |
+| 11 | [RabbitMQ](./RabbitMQ) | Очереди сообщений, кластер из двух нод, политика ha-all, отказ ноды |
+
+### Базы данных
+
+| # | Задание | Описание |
+|---|---|---|
+| 12 | [Базы данных](./Databases) | Проектирование модели данных по отчёту заказчика: 9 таблиц, схема, SQL-скрипт для PostgreSQL |
+| 13 | [Работа с данными (DDL/DML)](./DDL_DML) | MySQL 8: пользователи и права, восстановление дампа sakila, первичные ключи, частичный отзыв прав |
+| 14 | [SQL. Часть 1](./SQL.%20Part%201) | Выборки с LIKE, диапазоны дат, сортировка и LIMIT, строковые функции |
+| 15 | [SQL. Часть 2](./SQL.%20Part%202) | JOIN, подзапросы, группировка и HAVING, CASE, NOT EXISTS |
+| 16 | [Индексы](./Indexes) | Размер индексов, EXPLAIN ANALYZE и оптимизация запроса (3.34 с → 3 мс), типы индексов PostgreSQL |
+| 17 | [Репликация и масштабирование. Часть 1](./Replication%20and%20Scaling.%20Part%201) | Репликация MySQL master-slave и master-master на двух ВМ |
 
 ---
 
 ## 🛠 Используемые технологии
 
-- **Мониторинг:** Zabbix, Prometheus, Grafana, Node Exporter
-- **Алертинг:** настройка уведомлений и триггеров
-- **Визуализация:** дашборды Grafana, Kibana
-- **Логирование:** Elasticsearch, Logstash, Filebeat (ELK-стек)
-- **Очереди:** RabbitMQ (кластеризация, зеркалирование)
-- **Кеширование:** Redis, Memcached (TTL, типы данных)
-- **IaC & Cloud:** Terraform, Yandex Cloud (VPC, NLB, Target Group)
+- **Мониторинг и алертинг:** Zabbix, Prometheus, Alertmanager, Node Exporter, Grafana
+- **Отказоустойчивость и балансировка:** HSRP, Keepalived, HAProxy, Nginx
+- **Резервное копирование:** rsync, cron
+- **IaC и облако:** Terraform, Yandex Cloud (VPC, Network Load Balancer, Target Group), cloud-init
+- **Логирование:** Elasticsearch, Logstash, Kibana, Filebeat (ELK)
+- **Кеширование и очереди:** Redis, Memcached, RabbitMQ
+- **Базы данных:** MySQL 8, PostgreSQL, SQL, индексы и оптимизация запросов, репликация
+- **Инструменты:** Linux (Ubuntu), Bash, Python, Docker, Docker Compose, Vagrant, VirtualBox, Git
 
 ---
 
@@ -43,15 +68,8 @@
 |------|----------|
 | **Учебное заведение** | Нетология |
 | **Курс** | DevOps-инженер с нуля: расширенный курс |
-| **Студент** | Илембетов Василь |
-| **Цель** | Практическая отработка навыков, полученных на лекциях |
+| **Студент** | Илембетов Василь Ражапович |
 
 ---
 
-## 📌 Цель репозитория
-
-Этот репозиторий содержит все домашние задания, выполненные в рамках курса. Каждая папка представляет отдельное задание с описанием задачи, использованными конфигурациями и кратким отчётом о проделанной работе.
-
----
-
-> 💡 *Задания регулярно обновляются по мере прохождения курса.*
+> 💡 *Репозиторий пополняется по мере прохождения курса.*

@@ -1,5 +1,7 @@
 # Lab Work: HAProxy + Nginx
 
+[Русская версия](README.md)
+
 Student: Ilembetov Vasil Razhapovich
 
 This project contains materials and configurations for a homework assignment on load balancing using HAProxy and Nginx.

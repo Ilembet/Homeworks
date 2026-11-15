@@ -1,5 +1,7 @@
 # Домашнее задание к занятию «Система мониторинга Prometheus» - Илембетов Василь Ражапович (Ilembetov Vasil Razhapovich)
 
+[English version](README_en.md)
+
 ---
 
 ## Задание 1. Установка Prometheus

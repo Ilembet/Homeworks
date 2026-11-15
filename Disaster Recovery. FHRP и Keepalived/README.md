@@ -1,5 +1,7 @@
 # Домашнее задание к занятию 1 «Disaster recovery и Keepalived»   Илембетов Василь Ражапович
 
+[English version](README_en.md)
+
 ---
 
 ## Задание 1. HSRP и Cisco Packet Tracer

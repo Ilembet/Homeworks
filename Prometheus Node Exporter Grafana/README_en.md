@@ -1,6 +1,8 @@
 # Homework for the Lesson «Prometheus Monitoring System»
 
-**Completed by:** Ilembetov Vasily Rajapovich
+[Русская версия](README.md)
+
+**Completed by:** Ilembetov Vasil Razhapovich
 
 ---
 
@@ -10,7 +12,7 @@
 
 ![Systemctl Prometheus](img/1_status_prometheus.png)
 
-> The screenshot shows `systemctl status prometheus` with the line `prometheus.service — Prometheus Service Netology Lesson 9.4 — Ilembetov Vasily Rajapovich`.
+> The screenshot shows `systemctl status prometheus` with the line `prometheus.service — Prometheus Service Netology Lesson 9.4 — Ilembetov Vasil Razhapovich`.
 
 ---
 
@@ -20,7 +22,7 @@
 
 ![Systemctl Node Exporter](https://github.com/Ilembet/Homeworks/blob/c381014015f6811e596bf6e33e9b3d7754027da8/Prometheus%20Node%20Exporter%20Grafana/img/2_status_Node%20Exporter.png)
 
-> The screenshot shows `systemctl status node-exporter` with the line `node-exporter.service — Node Exporter Netology Lesson 9.4 — Ilembetov Vasily Rajapovich`.
+> The screenshot shows `systemctl status node-exporter` with the line `node-exporter.service — Node Exporter Netology Lesson 9.4 — Ilembetov Vasil Razhapovich`.
 
 ---
 

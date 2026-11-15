@@ -1,5 +1,7 @@
 # Homework: Backup with rsync   Ilembetov Vasil Razhapovich
 
+[Русская версия](README.md)
+
 ## 🇬🇧 Description
 
 This homework assignment is about setting up backup of the user's home directory using the `rsync` utility and `cron` scheduler.

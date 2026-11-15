@@ -1,5 +1,7 @@
 # Redis & Memcached
 
+[English version](README_EN.md)
+
 Студент: Илембетов Василь Ражапович
 
 ## Задание 1. Кеширование
