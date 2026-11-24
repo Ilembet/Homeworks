@@ -53,6 +53,7 @@ Hands-on practice of the skills learned during the course. Each folder is a sepa
 | # | Assignment | Description |
 |---|---|---|
 | 19 | [Vulnerabilities and Attacks on Information Systems](./Vulnerabilities%20and%20Attacks) | Scanning Metasploitable with nmap, finding vulnerabilities on exploit-db, SYN/FIN/Xmas/UDP scans in Wireshark |
+| 20 | [Host Protection](./Host%20Protection) | Home directory encryption with eCryptfs, partition encryption with LUKS, AppArmor profile experiment |
 
 ---
 
@@ -64,7 +65,7 @@ Hands-on practice of the skills learned during the course. Each folder is a sepa
 - **IaC and cloud:** Terraform, Yandex Cloud (VPC, Network Load Balancer, Target Group), cloud-init
 - **Logging:** Elasticsearch, Logstash, Kibana, Filebeat (ELK)
 - **Caching and queues:** Redis, Memcached, RabbitMQ
-- **Information security:** nmap, Wireshark, exploit-db, Metasploitable
+- **Information security:** nmap, Wireshark, exploit-db, Metasploitable, eCryptfs, LUKS (cryptsetup), AppArmor
 - **Databases:** MySQL 8, PostgreSQL, SQL, indexes and query optimization, replication, sharding
 - **Tools:** Linux (Ubuntu), Bash, Python, Docker, Docker Compose, Vagrant, VirtualBox, Git
 

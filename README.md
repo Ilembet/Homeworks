@@ -53,6 +53,7 @@
 | # | Задание | Описание |
 |---|---|---|
 | 19 | [Уязвимости и атаки на информационные системы](./Vulnerabilities%20and%20Attacks) | Сканирование Metasploitable через nmap, поиск уязвимостей на exploit-db, SYN/FIN/Xmas/UDP-сканирование в Wireshark |
+| 20 | [Защита хоста](./Host%20Protection) | Шифрование домашнего каталога eCryptfs, шифрование раздела LUKS, эксперимент с профилем AppArmor |
 
 ---
 
@@ -64,7 +65,7 @@
 - **IaC и облако:** Terraform, Yandex Cloud (VPC, Network Load Balancer, Target Group), cloud-init
 - **Логирование:** Elasticsearch, Logstash, Kibana, Filebeat (ELK)
 - **Кеширование и очереди:** Redis, Memcached, RabbitMQ
-- **Информационная безопасность:** nmap, Wireshark, exploit-db, Metasploitable
+- **Информационная безопасность:** nmap, Wireshark, exploit-db, Metasploitable, eCryptfs, LUKS (cryptsetup), AppArmor
 - **Базы данных:** MySQL 8, PostgreSQL, SQL, индексы и оптимизация запросов, репликация, шардинг
 - **Инструменты:** Linux (Ubuntu), Bash, Python, Docker, Docker Compose, Vagrant, VirtualBox, Git
 
