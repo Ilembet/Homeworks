@@ -48,6 +48,12 @@
 | 17 | [Репликация и масштабирование. Часть 1](./Replication%20and%20Scaling.%20Part%201) | Репликация MySQL master-slave и master-master на двух ВМ |
 | 18 | [Репликация и масштабирование. Часть 2](./Replication%20and%20Scaling.%20Part%202) | Преимущества master-slave схем, план вертикального и горизонтального шардинга, шардинг PostgreSQL в Docker (postgres_fdw) |
 
+### Информационная безопасность
+
+| # | Задание | Описание |
+|---|---|---|
+| 19 | [Уязвимости и атаки на информационные системы](./Vulnerabilities%20and%20Attacks) | Сканирование Metasploitable через nmap, поиск уязвимостей на exploit-db, SYN/FIN/Xmas/UDP-сканирование в Wireshark |
+
 ---
 
 ## 🛠 Используемые технологии
@@ -58,6 +64,7 @@
 - **IaC и облако:** Terraform, Yandex Cloud (VPC, Network Load Balancer, Target Group), cloud-init
 - **Логирование:** Elasticsearch, Logstash, Kibana, Filebeat (ELK)
 - **Кеширование и очереди:** Redis, Memcached, RabbitMQ
+- **Информационная безопасность:** nmap, Wireshark, exploit-db, Metasploitable
 - **Базы данных:** MySQL 8, PostgreSQL, SQL, индексы и оптимизация запросов, репликация, шардинг
 - **Инструменты:** Linux (Ubuntu), Bash, Python, Docker, Docker Compose, Vagrant, VirtualBox, Git
 

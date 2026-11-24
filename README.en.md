@@ -48,6 +48,12 @@ Hands-on practice of the skills learned during the course. Each folder is a sepa
 | 17 | [Replication and Scaling. Part 1](./Replication%20and%20Scaling.%20Part%201) | MySQL master-slave and master-master replication on two VMs |
 | 18 | [Replication and Scaling. Part 2](./Replication%20and%20Scaling.%20Part%202) | Benefits of master-slave setups, vertical and horizontal sharding plan, PostgreSQL sharding in Docker (postgres_fdw) |
 
+### Information security
+
+| # | Assignment | Description |
+|---|---|---|
+| 19 | [Vulnerabilities and Attacks on Information Systems](./Vulnerabilities%20and%20Attacks) | Scanning Metasploitable with nmap, finding vulnerabilities on exploit-db, SYN/FIN/Xmas/UDP scans in Wireshark |
+
 ---
 
 ## 🛠 Technologies Used
@@ -58,6 +64,7 @@ Hands-on practice of the skills learned during the course. Each folder is a sepa
 - **IaC and cloud:** Terraform, Yandex Cloud (VPC, Network Load Balancer, Target Group), cloud-init
 - **Logging:** Elasticsearch, Logstash, Kibana, Filebeat (ELK)
 - **Caching and queues:** Redis, Memcached, RabbitMQ
+- **Information security:** nmap, Wireshark, exploit-db, Metasploitable
 - **Databases:** MySQL 8, PostgreSQL, SQL, indexes and query optimization, replication, sharding
 - **Tools:** Linux (Ubuntu), Bash, Python, Docker, Docker Compose, Vagrant, VirtualBox, Git
 
